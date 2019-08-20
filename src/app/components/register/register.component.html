@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title>Register</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" class="form">
+
+      <mat-form-field floatLabel="never" class="form-element">
+        <input type="text" matInput placeholder="Name" formControlName="username">
+        <mat-error *ngIf="registerForm.controls['username'].invalid">
+          {{getError('username')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never" class="form-element">
+        <input type="text" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="registerForm.controls['email'].invalid">
+          {{getError('email')}}
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field floatLabel="never" class="form-element">
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="!registerForm.controls['password'].valid">
+          {{getError('password')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never" class="form-element">
+        <input type="password" matInput placeholder="confirmPassword" formControlName="confirmPassword">
+        <mat-error *ngIf="!registerForm.controls['confirmPassword'].valid">
+          {{getError('confirmPassword')}}
+        </mat-error>
+        <mat-error *ngIf="matchPasswords">Passwords must match</mat-error>
+      </mat-form-field>
+  
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!registerForm.valid && !buttonDisabled">Register</button>
+      </div>
+  
+    </form>
+  </mat-card-content>
+</mat-card>
