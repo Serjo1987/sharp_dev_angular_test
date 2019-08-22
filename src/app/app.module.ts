@@ -9,7 +9,9 @@ import {
   MatButtonModule,
   MatSnackBarModule,
   MatTabsModule,
-  MatIconModule
+  MatIconModule,
+  MatListModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +21,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserInfoComponent } from './components//user-info/user-info.component';
+import { ListOfLoggedUserTransactionsComponent } from './components/list-of-logged-user-transactions/list-of-logged-user-transactions.component';
+import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
 
 
 @NgModule({
@@ -28,7 +32,9 @@ import { UserInfoComponent } from './components//user-info/user-info.component';
     LoginComponent,
     AdminComponent,
     RegisterComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ListOfLoggedUserTransactionsComponent,
+    CreateTransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { UserInfoComponent } from './components//user-info/user-info.component';
     MatButtonModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatCardModule,
@@ -50,7 +58,9 @@ import { UserInfoComponent } from './components//user-info/user-info.component';
     MatButtonModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

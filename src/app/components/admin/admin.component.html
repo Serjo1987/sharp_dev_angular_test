@@ -1,10 +1,18 @@
 <header>
-  <a href="/admin">PW APP</a>
+  <a href="/admin">PW APP - Dashboard</a>
   <button mat-raised-button color="primary" class="button" (click)="logout()">Logout</button>
 </header>
 
 <div class="dashboard">
   <div class="item">
     <app-user-info></app-user-info>
+  </div>
+  <div class="item">
+    <app-list-of-logged-user-transactions></app-list-of-logged-user-transactions>
+  </div>
+</div>
+<div class="dashboard">
+  <div class="item">
+    <app-create-transaction></app-create-transaction>
   </div>
 </div>

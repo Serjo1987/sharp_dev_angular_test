@@ -4,14 +4,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiService } from '../../services/api/api.service';
 
 @Component({
-  selector: 'app-user-info',
-  templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.scss']
+  selector: 'app-list-of-logged-user-transactions',
+  templateUrl: './list-of-logged-user-transactions.component.html',
+  styleUrls: ['./list-of-logged-user-transactions.component.scss']
 })
-export class UserInfoComponent implements OnInit {
+export class ListOfLoggedUserTransactionsComponent implements OnInit {
   constructor(private api: ApiService, private matSnackBar: MatSnackBar) { }
 
-  public user: any;
+  public list: any;
 
   private openSnackBar(message: string, action: string) {
     this.matSnackBar.open(message, action, {
@@ -20,9 +20,9 @@ export class UserInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.api.userInfo().subscribe(
+    this.api.listOfTransactions().subscribe(
       (data: any) => {
-        this.user = data.user_info_token;
+        this.list = data.trans_token;
       },
       (error: any) => {
         this.openSnackBar(error.error, 'close');

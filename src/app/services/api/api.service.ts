@@ -9,6 +9,8 @@ import { User } from '../../interfaces/user';
 })
 export class ApiService {
   private BASE_URL = 'http://193.124.114.46:3001/';
+  private headers: HttpHeaders = new HttpHeaders()
+    .set('Authorization', 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'));
 
   constructor(private http: HttpClient) { }
 
@@ -21,9 +23,10 @@ export class ApiService {
   }
 
   userInfo(): Observable<any> {
-    let headers: HttpHeaders = new HttpHeaders()
-      .set('Authentication', 'bearer ' + localStorage.getItem('ACCESS_TOKEN'));
+    return this.http.get<any>(this.BASE_URL + 'api/protected/user-info', {headers: this.headers});
+  }
 
-    return this.http.get<any>(this.BASE_URL + 'api/protected/user-info', {headers: headers});
+  listOfTransactions(): Observable<any> {
+    return this.http.get<any>(this.BASE_URL + 'api/protected/transactions', {headers: this.headers});
   }
 }

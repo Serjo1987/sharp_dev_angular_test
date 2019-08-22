@@ -1,0 +1,12 @@
+<mat-card *ngIf="list">
+  <mat-card-title>List of logged user transactions</mat-card-title>
+  <mat-card-content>
+    <p *ngIf="list.length === 0">You haven't any completed transactions</p>
+    <!-- <mat-list role="list">
+      <mat-list-item role="listitem">ID: {{ user.id }}</mat-list-item>
+      <mat-list-item role="listitem">NAME: {{ user.name }}</mat-list-item>
+      <mat-list-item role="listitem">EMAIL: {{ user.email }}</mat-list-item>
+      <mat-list-item role="listitem">BALANCE: {{ user.balance }} PW</mat-list-item>
+    </mat-list> -->
+  </mat-card-content>
+</mat-card>
